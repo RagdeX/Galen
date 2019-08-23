@@ -11,10 +11,8 @@ public class LoginPage extends BaseActions{
 		this.driver=driver;
 	}
 */
-	public By theCancelButton () {
-		return By.xpath("//button[@class='btn btn-lg btn-default button-cancel']");
-	}
 	
+	// AQUI ESTUBO PEDRO SANTILLAN
 	public By theLoginButton () {
 		return By.xpath("//button[@class='btn btn-lg btn-primary button-login']");
 	}
@@ -27,24 +25,16 @@ public class LoginPage extends BaseActions{
 		return By.name("login.password");
 	}
 	
+	public By theCancelButton () {
+		return By.xpath("//button[@class='btn btn-lg btn-default button-cancel']");
+	}
+	
 	public By theMyNotesLabel () { 
 		return By.xpath("//h2");
 	}
 	
 	public By theSimpleNoteLink() {
 		return By.xpath("//div[@class='list-group']/a/h4[contains(text(),'Simple note')]");
-	}
-	
-	public By theAnotherNoteLink() {
-		return By.xpath("//div[@class='list-group']/a/h4[contains(text(),'Another note')]");
-	}
-	
-	public By theAddNoteButton() {
-		return By.xpath("//button");
-	}
-	
-	public By theTitleTxt() {
-		return By.xpath("//input[@type='text']");
 	}
 	
 	public By theDescriptionTxt() {
@@ -55,12 +45,24 @@ public class LoginPage extends BaseActions{
 		return By.xpath("//button[1]");
 	}
 	
+	public By theWrittenText (String text) {
+		return By.xpath("//*[contains(text(),'"+text+"')]");
+		}
+	
+	public By theAnotherNoteLink() {
+		return By.xpath("//div[@class='list-group']/a/h4[contains(text(),'Another note')]");
+	}
+	/*
+	public By theAddNoteButton() {
+		return By.xpath("//button");
+	}
+	
+	public By theTitleTxt() {
+		return By.xpath("//input[@type='text']");
+	}
+		
 	public By theNoteCancelButton() {
 		return By.name("//button[2]");
 	}
-	
-	public By theWrittenText (String text) {
-	return By.xpath("//*[contains(text(),'"+text+"')]");
-	}
-		
+	*/
 }
