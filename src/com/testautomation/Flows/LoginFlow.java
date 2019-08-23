@@ -4,12 +4,7 @@ package com.testautomation
 import com.testautomation.PageObjects.LoginPage;
 
 public class LoginFlow extends LoginPage {
- /*
-	public LoginFlow(WebDriver driver) {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}
-*/
+
 	public void login(String user, String pass) { 
 		click(theLoginButton());
 		input(user, theUserNameTxt());
@@ -41,5 +36,9 @@ public class LoginFlow extends LoginPage {
 	
 	public void validateNote(String text) {
 	 isElementPresent(theWrittenText(text));
+	}
+	
+	public void selectTheAnotherNote() {
+		click(theAnotherNoteLink());
 	}
 }

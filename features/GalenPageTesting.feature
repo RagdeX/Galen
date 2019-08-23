@@ -9,18 +9,17 @@ Feature: Galen Framework Outline
     When I create a simple note "<text1>"
     Then I validate the simple note "<text1>"
     
-  Examples:
-  	 | text1| 
-  	 | Hola soy carmelo de todos los meseros el primero | 
+    Examples:    
+   	 | text1| 
+  	 | Primer Mensaje | 
     
 
-#  Scenario Outline: Add another note
- #   Given I click on the another note 
- #   When I write on the desciprion text box <text2>
-  #  And I click on the save button  
-  #  Then I validate the text from the description text box 
+	Scenario Outline: Add another note
+ 		Given I select the another note 
+    When I create an another note "<text2>"
+    Then I validate the another note "<text2>"
     
- # Examples:
- # 	 | text2                | 
- # 	 | Ven y pierdeme el respeto | 
+    Examples: 
+ 		 | text2| 
+  	 | Segundo Mensaje | 
   	 
