@@ -2,5 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.testautomation.TestRunner.TestRunner"/>
+    </classes>
   </test> <!-- Test -->
+  
+  <listeners>
+  <listener class-name="com.testautomation.Listeners.ITestListenerImpl"></listener>
+  </listeners>
 </suite> <!-- Suite -->

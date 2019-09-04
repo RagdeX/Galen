@@ -3,6 +3,10 @@ package com.testautomation.StepDefinitions;
 import java.io.IOException;
 import java.util.Properties;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.GherkinKeyword;
+import com.aventstack.extentreports.gherkin.model.Feature;
+import com.aventstack.extentreports.gherkin.model.Scenario;
 import com.testautomation.Flows.LoginFlow;
 import com.testautomation.utils.BaseClass;
 import com.testautomation.utils.PropertiesFileReader;
@@ -29,7 +33,6 @@ public class LoginGalenFramework extends BaseClass{
 	public void tearDown() throws Throwable{
 		Thread.sleep(5000);
 		driver().close();
-//		driver().quit();
 		logger = logger.getLogger(LoginGalenFramework.class);
 		logger.info("close navegator");
 	}
@@ -37,42 +40,83 @@ public class LoginGalenFramework extends BaseClass{
 	
 	@Given("the user login into Galen FrameWork {string} {string}")
 	public void the_user_login_into_Galen_FrameWork(String user, String pass) {
-		new LoginFlow().login(user, pass);
+				new LoginFlow().login(user, pass);
 	}
 
 	@Given("I select the simple note")
 	public void i_click_on_the_simple_note() {
-	    new LoginFlow().selectTheSimpleNote();
+		ExtentTest logInfo1=null;
+		try {
+			test1 = extent.createTest(Feature.class, "Galen Framework Outline 1");
+			test1=test1.createNode(Scenario.class, "I select the simple note");
+			logInfo1=test1.createNode(new GherkinKeyword("Given"), "i_click_on_the_simple_note");
+			new LoginFlow().selectTheSimpleNote();
+			logInfo1.pass("I select the simple note");
+		} catch (AssertionError | Exception e) {
+			testStepHandle("FAIL",driver(),logInfo1,e);			
+		}
 	}
 
 	@When("I create a simple note {string}")
 	public void i_create_a_simple_note(String text) {
-	    new LoginFlow().witeNote(text);
+		ExtentTest logInfo1=null;
+		try {
+			logInfo1=test1.createNode(new GherkinKeyword("When"), "i_create_a_simple_note");
+			new LoginFlow().witeNote(text);
+			logInfo1.pass("I create a simple note");
+		} catch (AssertionError | Exception e) {
+			testStepHandle("FAIL",driver(),logInfo1,e);			
+		}	
 	}
 	
 	@Then("I validate the simple note {string}")
 	public void i_validate_the_simple_note(String text) {
-	    new LoginFlow().theWrittenText(text);
+		ExtentTest logInfo1=null;
+		try {
+			logInfo1=test1.createNode(new GherkinKeyword("Then"), "i_validate_the_simple_note");
+			new LoginFlow().theWrittenText(text);
+			logInfo1.pass("I validate the simple note");
+		} catch (AssertionError | Exception e) {
+			testStepHandle("FAIL",driver(),logInfo1,e);			
+		}	
 	}
 	
 	//****************************************************************
 	@Given("I select the another note")
 	public void i_select_the_another_note() {
-		new LoginFlow().selectTheAnotherNote();   
+		ExtentTest logInfo2=null;
+		try {
+			test2 = extent.createTest(Feature.class, "Galen Framework Outline 2");
+			test2=test2.createNode(Scenario.class, "I select the another note");
+			logInfo2=test2.createNode(new GherkinKeyword("Given"), "i_select_the_another_note");
+			new LoginFlow().selectTheAnotherNote(); 
+			logInfo2.pass("I select the another note");
+		} catch (AssertionError | Exception e) {
+			testStepHandle("FAIL",driver(),logInfo2,e);			
+		}	
 	}
 
 	@When("I create an another note {string}")
 	public void i_create_an_another_note(String text2) {
-		 new LoginFlow().witeNote(text2);
+		ExtentTest logInfo2=null;
+		try {
+			logInfo2=test2.createNode(new GherkinKeyword("When"), "i_create_an_another_note");
+			new LoginFlow().witeNote(text2);
+			logInfo2.pass("I create an another note");
+		} catch (AssertionError | Exception e) {
+			testStepHandle("FAIL",driver(),logInfo2,e);			
+		}	
 	}
 
 	@Then("I validate the another note {string}")
 	public void i_validate_the_another_note(String text2) {
-		new LoginFlow().theWrittenText(text2);
+		ExtentTest logInfo2=null;
+		try {
+			logInfo2=test2.createNode(new GherkinKeyword("Then"), "i_validate_the_another_note");
+			new LoginFlow().theWrittenText(text2);
+			logInfo2.pass("I validate the another note");
+		} catch (AssertionError | Exception e) {
+			testStepHandle("FAIL",driver(),logInfo2,e);			
+		}	
 	}
-	
-	
-	
-	
-	
 }

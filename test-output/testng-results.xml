@@ -2,35 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25366" started-at="2019-08-23T21:01:20Z" finished-at="2019-08-23T21:01:45Z">
+  <suite name="Suite" duration-ms="17129" started-at="2019-09-04T16:19:39 CDT" finished-at="2019-09-04T16:19:56 CDT">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@59494225]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="25366" started-at="2019-08-23T21:01:20Z" finished-at="2019-08-23T21:01:45Z">
+    <test name="Test" duration-ms="17129" started-at="2019-09-04T16:19:39 CDT" finished-at="2019-09-04T16:19:56 CDT">
       <class name="com.testautomation.TestRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@59494225]" name="setUpClass" is-config="true" duration-ms="136" started-at="2019-08-23T21:01:20Z" finished-at="2019-08-23T21:01:20Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@11438d26]" name="setUpClass" is-config="true" duration-ms="265" started-at="2019-09-04T16:19:39 CDT" finished-at="2019-09-04T16:19:39 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@59494225]" name="runScenario" duration-ms="25144" started-at="2019-08-23T21:01:20Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-08-23T21:01:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Add a simple note"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Galen Framework Outline"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@59494225]" name="runScenario" duration-ms="25144" started-at="2019-08-23T21:01:20Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-08-23T21:01:45Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@11438d26]" name="feature" duration-ms="16271" started-at="2019-09-04T16:19:39 CDT" data-provider="features" finished-at="2019-09-04T16:19:56 CDT">
           <params>
             <param index="0">
               <value>
@@ -45,12 +26,28 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@59494225]" name="tearDownClass" is-config="true" duration-ms="9" started-at="2019-08-23T21:01:45Z" finished-at="2019-08-23T21:01:45Z">
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@11438d26]" name="feature" duration-ms="16455" started-at="2019-09-04T16:19:39 CDT" data-provider="features" finished-at="2019-09-04T16:19:56 CDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Add a simple note"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Galen Framework Outline"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@11438d26]" name="tearDownClass" is-config="true" duration-ms="10" started-at="2019-09-04T16:19:56 CDT" finished-at="2019-09-04T16:19:56 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- com.testautomation.TestRunner.TestRunner -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
