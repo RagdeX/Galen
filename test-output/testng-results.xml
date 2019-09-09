@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="43490" started-at="2019-09-09T10:24:25 CDT" finished-at="2019-09-09T10:25:08 CDT">
+  <suite name="Suite" duration-ms="15537" started-at="2019-09-09T11:30:41 CDT" finished-at="2019-09-09T11:30:56 CDT">
     <groups>
     </groups>
-    <test name="Test" duration-ms="43490" started-at="2019-09-09T10:24:25 CDT" finished-at="2019-09-09T10:25:08 CDT">
+    <test name="Test" duration-ms="15537" started-at="2019-09-09T11:30:41 CDT" finished-at="2019-09-09T11:30:56 CDT">
       <class name="com.testautomation.TestRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@7a1ebcd8]" name="setUpClass" is-config="true" duration-ms="178" started-at="2019-09-09T10:24:25 CDT" finished-at="2019-09-09T10:24:25 CDT">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@7a1ebcd8]" name="setUpClass" is-config="true" duration-ms="220" started-at="2019-09-09T11:30:41 CDT" finished-at="2019-09-09T11:30:41 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@7a1ebcd8]" name="feature" duration-ms="42893" started-at="2019-09-09T10:24:25 CDT" data-provider="features" finished-at="2019-09-09T10:25:08 CDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@7a1ebcd8]" name="feature" duration-ms="14889" started-at="2019-09-09T11:30:41 CDT" data-provider="features" finished-at="2019-09-09T11:30:56 CDT">
           <params>
             <param index="0">
               <value>
@@ -24,61 +24,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'EPMXGUAW0506', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: driver.version: RemoteWebDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
-Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'EPMXGUAW0506', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:435)
-at com.testautomation.StepDefinitions.LoginGalenFramework.tearDown(LoginGalenFramework.java:35)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at cucumber.runtime.Utils$1.call(Utils.java:26)
-at cucumber.runtime.Timeout.timeout(Timeout.java:16)
-at cucumber.runtime.Utils.invoke(Utils.java:20)
-at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)
-at cucumber.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:16)
-at cucumber.runner.TestStep.executeStep(TestStep.java:63)
-at cucumber.runner.TestStep.run(TestStep.java:49)
-at cucumber.runner.TestCase.run(TestCase.java:48)
-at cucumber.runner.Runner.runPickle(Runner.java:40)
-at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:68)
-at com.testautomation.TestRunner.TestRunner.feature(TestRunner.java:28)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)
-at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-at java.util.concurrent.FutureTask.run(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@7a1ebcd8]" name="feature" duration-ms="11893" started-at="2019-09-09T10:24:25 CDT" data-provider="features" finished-at="2019-09-09T10:24:37 CDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@7a1ebcd8]" name="feature" duration-ms="14829" started-at="2019-09-09T11:30:41 CDT" data-provider="features" finished-at="2019-09-09T11:30:56 CDT">
           <params>
             <param index="0">
               <value>
@@ -94,7 +43,7 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@7a1ebcd8]" name="tearDownClass" is-config="true" duration-ms="24" started-at="2019-09-09T10:25:08 CDT" finished-at="2019-09-09T10:25:08 CDT">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@7a1ebcd8]" name="tearDownClass" is-config="true" duration-ms="39" started-at="2019-09-09T11:30:56 CDT" finished-at="2019-09-09T11:30:56 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -76,7 +76,6 @@ public class LoginGalenFramework extends BaseClass{
 		ExtentTest logInfo1=null;
 		try {
 			logInfo1=test1.createNode(new GherkinKeyword("Then"), "i_validate_the_simple_note");
-			text="hola";
 			Assert.assertEquals(new LoginFlow().validateNote(text),true);
 			logInfo1.pass("I validate the simple note");
 			logInfo1.addScreenCaptureFromPath(captureScreenShot(driver()));
