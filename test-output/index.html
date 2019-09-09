@@ -161,6 +161,8 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;com.testautomation.StepDefinitions.LoginGalenFramework&quot;/&gt;
+      &lt;class name=&quot;com.testautomation.utils.BaseClass&quot;/&gt;
       &lt;class name=&quot;com.testautomation.TestRunner.TestRunner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
@@ -175,7 +177,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -205,16 +207,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'feature')
 data.setCell(0, 2, 'com.testautomation.TestRunner.TestRunner')
-data.setCell(0, 3, 14889);
+data.setCell(0, 3, 12351);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'feature')
 data.setCell(1, 2, 'com.testautomation.TestRunner.TestRunner')
-data.setCell(1, 3, 14829);
+data.setCell(1, 3, 12351);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 29 seconds</span>
+              <span class="suite-total-time">Total running time: 24 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -247,15 +249,15 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">feature("Add another note", "Galen Framework Outline")</span>
-                <span class="method-start">335 ms</span>
+                <span class="method-start">187 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">feature("Add a simple note", "Galen Framework Outline")</span>
-                <span class="method-start">335 ms</span>
+                <span class="method-start">187 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">15228 ms</span>
+                <span class="method-start">12546 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
