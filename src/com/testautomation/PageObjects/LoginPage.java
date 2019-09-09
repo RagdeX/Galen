@@ -4,14 +4,7 @@ import org.openqa.selenium.By;
 import com.testautomation.utils.BaseActions;
 
 public class LoginPage extends BaseActions{
-	/*
-	WebDriver driver;
-	
-	public LoginPage(WebDriver driver) {
-		this.driver=driver;
-	}
-*/
-	
+		
 	// AQUI ESTUBO PEDRO SANTILLAN
 	public By theLoginButton () {
 		return By.xpath("//button[@class='btn btn-lg btn-primary button-login']");

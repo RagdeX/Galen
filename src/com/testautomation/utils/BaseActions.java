@@ -23,7 +23,8 @@ public class BaseActions extends BaseClass {
 	        try {
 	            return driver().findElement(by).isDisplayed();
 	        } catch (Exception e) {
-	            return false;
+	            System.out.println("NO LO ENCUENTRO");
+	        	return false;
 	        }
 	    }
 	

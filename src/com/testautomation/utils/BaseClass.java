@@ -1,9 +1,17 @@
 package com.testautomation.utils;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -52,7 +60,7 @@ public class BaseClass {
 			report = new ExtentHtmlReporter(reportLocation);		
 			report.config().setDocumentTitle("Automation Test Report");
 			report.config().setReportName("Automation Test Report");
-			report.config().setTheme(Theme.STANDARD);		
+			report.config().setTheme(Theme.STANDARD);
 			System.out.println("Extent Report location initialized . . .");
 			report.start();
 			extent = new ExtentReports();
@@ -67,18 +75,43 @@ public class BaseClass {
 		public static void testStepHandle(String teststatus,WebDriver driver,ExtentTest extenttest,Throwable throwable) {
 			switch (teststatus) {
 			case "FAIL":		
-				extenttest.fail(MarkupHelper.createLabel("Test Case is Failed : ", ExtentColor.RED));			
+				extenttest.fail(MarkupHelper.createLabel("Test Scenario is Failed : ", ExtentColor.RED));			
 				extenttest.error(throwable.fillInStackTrace());
+				try {
+					extenttest.addScreenCaptureFromPath(captureScreenShot(driver));
+				} catch(IOException e) {
+					e.printStackTrace();
+				}
 				if (driver != null) {
 					driver.quit();
 				}		
 			break;
 			case "PASS":			
-				extenttest.pass(MarkupHelper.createLabel("Test Case is Passed : ", ExtentColor.GREEN));
+				extenttest.pass(MarkupHelper.createLabel("Test Scenario is Passed : ", ExtentColor.GREEN));
 				break;
 			default:
 				break;
 			}
 		}
-	  
+		
+		public static String captureScreenShot(WebDriver driver) throws IOException {
+			TakesScreenshot screen = (TakesScreenshot) driver;
+			File src = screen.getScreenshotAs(OutputType.FILE);
+			String dest = System.getProperty("user.dir") + "/Reports/Screenshots/"+ getcurrentdateandtime() + ".png";
+			File target = new File(dest);
+			FileUtils.copyFile(src, target);
+			return dest;
+		}
+
+		private static String getcurrentdateandtime() {
+			String str = null;
+			try {
+				DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss:SSS");
+				Date date = new Date();
+				str = dateFormat.format(date);
+				str = str.replace(" ", "").replaceAll("/", "").replaceAll(":", "");
+			} catch (Exception e) {
+			}
+			return str;
+		}
 }

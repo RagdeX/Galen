@@ -10,6 +10,7 @@ import com.aventstack.extentreports.gherkin.model.Scenario;
 import com.testautomation.Flows.LoginFlow;
 import com.testautomation.utils.BaseClass;
 import com.testautomation.utils.PropertiesFileReader;
+import org.testng.Assert;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -31,7 +32,6 @@ public class LoginGalenFramework extends BaseClass{
 	@SuppressWarnings("static-access")
 	@After
 	public void tearDown() throws Throwable{
-		Thread.sleep(5000);
 		driver().close();
 		logger = logger.getLogger(LoginGalenFramework.class);
 		logger.info("close navegator");
@@ -52,6 +52,7 @@ public class LoginGalenFramework extends BaseClass{
 			logInfo1=test1.createNode(new GherkinKeyword("Given"), "i_click_on_the_simple_note");
 			new LoginFlow().selectTheSimpleNote();
 			logInfo1.pass("I select the simple note");
+			logInfo1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),logInfo1,e);			
 		}
@@ -64,6 +65,7 @@ public class LoginGalenFramework extends BaseClass{
 			logInfo1=test1.createNode(new GherkinKeyword("When"), "i_create_a_simple_note");
 			new LoginFlow().witeNote(text);
 			logInfo1.pass("I create a simple note");
+			logInfo1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),logInfo1,e);			
 		}	
@@ -74,8 +76,10 @@ public class LoginGalenFramework extends BaseClass{
 		ExtentTest logInfo1=null;
 		try {
 			logInfo1=test1.createNode(new GherkinKeyword("Then"), "i_validate_the_simple_note");
-			new LoginFlow().theWrittenText(text);
+			text="hola";
+			Assert.assertEquals(new LoginFlow().validateNote(text),true);
 			logInfo1.pass("I validate the simple note");
+			logInfo1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),logInfo1,e);			
 		}	
@@ -91,6 +95,7 @@ public class LoginGalenFramework extends BaseClass{
 			logInfo2=test2.createNode(new GherkinKeyword("Given"), "i_select_the_another_note");
 			new LoginFlow().selectTheAnotherNote(); 
 			logInfo2.pass("I select the another note");
+			logInfo2.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),logInfo2,e);			
 		}	
@@ -103,6 +108,7 @@ public class LoginGalenFramework extends BaseClass{
 			logInfo2=test2.createNode(new GherkinKeyword("When"), "i_create_an_another_note");
 			new LoginFlow().witeNote(text2);
 			logInfo2.pass("I create an another note");
+			logInfo2.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),logInfo2,e);			
 		}	
@@ -113,8 +119,10 @@ public class LoginGalenFramework extends BaseClass{
 		ExtentTest logInfo2=null;
 		try {
 			logInfo2=test2.createNode(new GherkinKeyword("Then"), "i_validate_the_another_note");
-			new LoginFlow().theWrittenText(text2);
+			//text2="hola";
+			Assert.assertEquals(new LoginFlow().validateNote(text2),true);
 			logInfo2.pass("I validate the another note");
+			logInfo2.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),logInfo2,e);			
 		}	

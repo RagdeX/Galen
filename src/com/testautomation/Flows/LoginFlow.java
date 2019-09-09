@@ -34,8 +34,8 @@ public class LoginFlow extends LoginPage {
 		click(theSaveButton());
 	}
 	
-	public void validateNote(String text) {
-	 isElementPresent(theWrittenText(text));
+	public boolean validateNote(String text) {
+	 return isElementPresent(theWrittenText(text));
 	}
 	
 	public void selectTheAnotherNote() {
