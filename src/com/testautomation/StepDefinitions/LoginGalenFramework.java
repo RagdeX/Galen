@@ -20,7 +20,7 @@ import cucumber.api.java.en.When;
 
 
 public class LoginGalenFramework extends BaseClass{
-		
+	//nueva version develop 2.1	
 	@Before
 	public void setUp() throws IOException {
 		PropertiesFileReader obj= new PropertiesFileReader();
