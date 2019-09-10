@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="12759" started-at="2019-09-09T16:56:58 CDT" finished-at="2019-09-09T16:57:10 CDT">
+  <suite name="Suite" duration-ms="13983" started-at="2019-09-10T13:06:44 CDT" finished-at="2019-09-10T13:06:58 CDT">
     <groups>
     </groups>
-    <test name="Test" duration-ms="12759" started-at="2019-09-09T16:56:58 CDT" finished-at="2019-09-09T16:57:10 CDT">
+    <test name="Test" duration-ms="13983" started-at="2019-09-10T13:06:44 CDT" finished-at="2019-09-10T13:06:58 CDT">
       <class name="com.testautomation.TestRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@631330c]" name="setUpClass" is-config="true" duration-ms="126" started-at="2019-09-09T16:56:58 CDT" finished-at="2019-09-09T16:56:58 CDT">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@631330c]" name="setUpClass" is-config="true" duration-ms="598" started-at="2019-09-10T13:06:44 CDT" finished-at="2019-09-10T13:06:45 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@631330c]" name="feature" duration-ms="12351" started-at="2019-09-09T16:56:58 CDT" data-provider="features" finished-at="2019-09-09T16:57:10 CDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@631330c]" name="feature" duration-ms="12937" started-at="2019-09-10T13:06:45 CDT" data-provider="features" finished-at="2019-09-10T13:06:58 CDT">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@631330c]" name="feature" duration-ms="12351" started-at="2019-09-09T16:56:58 CDT" data-provider="features" finished-at="2019-09-09T16:57:10 CDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@631330c]" name="feature" duration-ms="12657" started-at="2019-09-10T13:06:45 CDT" data-provider="features" finished-at="2019-09-10T13:06:58 CDT">
           <params>
             <param index="0">
               <value>
@@ -43,7 +43,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@631330c]" name="tearDownClass" is-config="true" duration-ms="8" started-at="2019-09-09T16:57:10 CDT" finished-at="2019-09-09T16:57:10 CDT">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@631330c]" name="tearDownClass" is-config="true" duration-ms="5" started-at="2019-09-10T13:06:58 CDT" finished-at="2019-09-10T13:06:58 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
