@@ -6,6 +6,7 @@
       <class name="com.testautomation.StepDefinitions.LoginGalenFramework"/>
       <class name="com.testautomation.utils.BaseClass"/>
       <class name="com.testautomation.TestRunner.TestRunner"/>
+      <class name="com.testautomation.Listeners.ITestListenerImpl"/>
     </classes>
   </test> <!-- Test -->
    <listeners>
