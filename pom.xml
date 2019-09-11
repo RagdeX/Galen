@@ -18,6 +18,7 @@
 	</properties>
 
 	<build>
+		<sourceDirectory>${basedir}/src</sourceDirectory>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -40,6 +41,7 @@
 						<suiteXmlFiles>
 							<suiteXmlFile>testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
+						<forkCount>1</forkCount>
 					</configuration>
 				</plugin>
 			</plugins>
@@ -56,7 +58,6 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.0.0</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
