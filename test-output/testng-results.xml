@@ -2,32 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="20798" started-at="2019-09-11T14:04:44 CDT" finished-at="2019-09-11T14:05:05 CDT">
+  <suite name="Suite" duration-ms="12104" started-at="2019-09-12T10:16:06 CDT" finished-at="2019-09-12T10:16:18 CDT">
     <groups>
     </groups>
-    <test name="Test" duration-ms="20798" started-at="2019-09-11T14:04:44 CDT" finished-at="2019-09-11T14:05:05 CDT">
+    <test name="Test" duration-ms="12104" started-at="2019-09-12T10:16:06 CDT" finished-at="2019-09-12T10:16:18 CDT">
       <class name="com.testautomation.TestRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@c46bcd4]" name="setUpClass" is-config="true" duration-ms="129" started-at="2019-09-11T14:04:44 CDT" finished-at="2019-09-11T14:04:44 CDT">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@4d50efb8]" name="setUpClass" is-config="true" duration-ms="112" started-at="2019-09-12T10:16:06 CDT" finished-at="2019-09-12T10:16:06 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@c46bcd4]" name="feature" duration-ms="11118" started-at="2019-09-11T14:04:44 CDT" data-provider="features" finished-at="2019-09-11T14:04:55 CDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Add another note"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Galen Framework Outline"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@c46bcd4]" name="feature" duration-ms="20395" started-at="2019-09-11T14:04:44 CDT" data-provider="features" finished-at="2019-09-11T14:05:05 CDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@4d50efb8]" name="feature" duration-ms="9439" started-at="2019-09-12T10:16:06 CDT" data-provider="features" finished-at="2019-09-12T10:16:16 CDT">
           <params>
             <param index="0">
               <value>
@@ -43,7 +27,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@c46bcd4]" name="tearDownClass" is-config="true" duration-ms="6" started-at="2019-09-11T14:05:05 CDT" finished-at="2019-09-11T14:05:05 CDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@4d50efb8]" name="feature" duration-ms="11704" started-at="2019-09-12T10:16:06 CDT" data-provider="features" finished-at="2019-09-12T10:16:18 CDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Add another note"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Galen Framework Outline"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@4d50efb8]" name="tearDownClass" is-config="true" duration-ms="4" started-at="2019-09-12T10:16:18 CDT" finished-at="2019-09-12T10:16:18 CDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
