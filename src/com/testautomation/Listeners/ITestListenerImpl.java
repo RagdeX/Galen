@@ -5,32 +5,31 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.testautomation.utils.BaseClass;
 
-public class ITestListenerImpl extends BaseClass implements ITestListener {
+public class ITestListenerImpl extends ExtentReportListener implements ITestListener {
 
 	public static ExtentReports extent;
 	
 	public void onStart(ITestContext context) {
-		System.out.println("Execution started"); 
+		System.out.println("Execution STARTED"); 
 		extent=setUpReport();
 	}
 	
 	public void onFinish(ITestContext context) {
-		System.out.println("Execution completed"); 
+		System.out.println("Execution COMPLETED"); 
 		extent.flush();
-		System.out.println("Generated report. . . .");
+		System.out.println("Extent Report GENERATED. . . .");
 	}
 	
 	public void onTestSuccess(ITestResult context) {
-		System.out.println("PASS"); 
+		System.out.println("P A S S"); 
 	}
 	
 	public void onTestFailure(ITestResult context) {
-		System.out.println("FAIL"); 
+		System.out.println("F A I L"); 
 	}
 	
 	public void onTestSkipped(ITestResult context) {
-		System.out.println("SKIP"); 
+		System.out.println("S K I P"); 
 	}
 }

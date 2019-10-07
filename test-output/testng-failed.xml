@@ -9,7 +9,7 @@
       <class name="com.testautomation.TestRunner.TestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="feature" invocation-numbers="0"/>
+          <include name="feature" invocation-numbers="1"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.testautomation.TestRunner.TestRunner -->

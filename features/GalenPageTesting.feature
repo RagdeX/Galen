@@ -23,3 +23,5 @@ Feature: Galen Framework Outline
  		 | text2| 
   	 | Segundo Mensaje | 
   	 
+
+  

@@ -5,10 +5,8 @@ import java.util.Properties;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.GherkinKeyword;
-import com.aventstack.extentreports.gherkin.model.Feature;
-import com.aventstack.extentreports.gherkin.model.Scenario;
 import com.testautomation.Flows.LoginFlow;
-import com.testautomation.utils.BaseClass;
+import com.testautomation.Listeners.ExtentReportListener;
 import com.testautomation.utils.PropertiesFileReader;
 import org.testng.Assert;
 
@@ -17,16 +15,21 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.api.Scenario;
 
 
-public class LoginGalenFramework extends BaseClass{
-	//nueva version develop 2.1	
+public class LoginGalenFramework extends ExtentReportListener{
+	
+	
+	
 	@Before
-	public void setUp() throws IOException {
+	public void setUp(Scenario scenario) throws IOException {
 		PropertiesFileReader obj= new PropertiesFileReader();
 		Properties properties=obj.getProperty();
 		startDriver((properties.getProperty("browser.name")));
 		driver().get("http://testapp.galenframework.com");
+		System.out.println("BEFORE "+scenario.getName());
+		scenarioL.set(scenario.getName());
 	}
 	
 	@SuppressWarnings("static-access")
@@ -34,7 +37,7 @@ public class LoginGalenFramework extends BaseClass{
 	public void tearDown() throws Throwable{
 		driver().close();
 		logger = logger.getLogger(LoginGalenFramework.class);
-		logger.info("close navegator");
+		logger.info("SCENARIO COMPLETED: Close Navegator");
 	}
 	
 	
@@ -43,87 +46,98 @@ public class LoginGalenFramework extends BaseClass{
 				new LoginFlow().login(user, pass);
 	}
 
+	//***********************scenario *****************************************
 	@Given("I select the simple note")
 	public void i_click_on_the_simple_note() {
-		ExtentTest logInfo1=null;
+		ExtentTest test1=null;
 		try {
-			test1 = extent.createTest(Feature.class, "Galen Framework Outline 1");
-			test1=test1.createNode(Scenario.class, "I select the simple note");
-			logInfo1=test1.createNode(new GherkinKeyword("Given"), "i_click_on_the_simple_note");
+			test1 = startScenario(scenarioL.get());
+			test1= test1.createNode(("Given"),"I select the simple note");
 			new LoginFlow().selectTheSimpleNote();
-			logInfo1.pass("I select the simple note");
-			logInfo1.addScreenCaptureFromPath(captureScreenShot(driver()));
+			//test1.pass("Test Step Has Passed");
+			testStepHandle("PASS",driver(),test1,null);
+			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
-			testStepHandle("FAIL",driver(),logInfo1,e);			
+			testStepHandle("FAIL",driver(),test1,e);			
 		}
 	}
 
 	@When("I create a simple note {string}")
 	public void i_create_a_simple_note(String text) {
-		ExtentTest logInfo1=null;
+		ExtentTest test1=null;
 		try {
-			logInfo1=test1.createNode(new GherkinKeyword("When"), "i_create_a_simple_note");
+			test1 = startScenario(scenarioL.get());
+			test1 = test1.createNode(("When"),"I create a simple note");
 			new LoginFlow().witeNote(text);
-			logInfo1.pass("I create a simple note");
-			logInfo1.addScreenCaptureFromPath(captureScreenShot(driver()));
+			//test1.pass("Test Step Has Passed");
+			testStepHandle("PASS",driver(),test1,null);
+			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
-			testStepHandle("FAIL",driver(),logInfo1,e);			
+			testStepHandle("FAIL",driver(),test1,e);			
 		}	
 	}
 	
 	@Then("I validate the simple note {string}")
 	public void i_validate_the_simple_note(String text) {
-		ExtentTest logInfo1=null;
+		ExtentTest test1=null;
 		try {
-			logInfo1=test1.createNode(new GherkinKeyword("Then"), "i_validate_the_simple_note");
-			Assert.assertEquals(new LoginFlow().validateNote(text),true);
-			logInfo1.pass("I validate the simple note");
-			logInfo1.addScreenCaptureFromPath(captureScreenShot(driver()));
+			test1 = startScenario(scenarioL.get());
+			test1=test1.createNode(("Then"),"I validate the simple note");
+			Assert.assertTrue(new LoginFlow().validateNote(text));
+			//test1.pass("Test Step Has Passed");
+			testStepHandle("PASS",driver(),test1,null);
+			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
-			testStepHandle("FAIL",driver(),logInfo1,e);			
+			testStepHandle("FAIL",driver(),test1,e);			
 		}	
 	}
 	
-	//****************************************************************
+	//***********************scenario *****************************************
 	@Given("I select the another note")
 	public void i_select_the_another_note() {
-		ExtentTest logInfo2=null;
+		ExtentTest test1=null;
 		try {
-			test2 = extent.createTest(Feature.class, "Galen Framework Outline 2");
-			test2=test2.createNode(Scenario.class, "I select the another note");
-			logInfo2=test2.createNode(new GherkinKeyword("Given"), "i_select_the_another_note");
+			test1 = startScenario(scenarioL.get());
+			test1= test1.createNode(("Given"),"I select the another note");
 			new LoginFlow().selectTheAnotherNote(); 
-			logInfo2.pass("I select the another note");
-			logInfo2.addScreenCaptureFromPath(captureScreenShot(driver()));
+			//test1.pass("Test Step Has Passed");
+			testStepHandle("PASS",driver(),test1,null);
+			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
-			testStepHandle("FAIL",driver(),logInfo2,e);			
+			testStepHandle("FAIL",driver(),test1,e);			
 		}	
 	}
 
 	@When("I create an another note {string}")
 	public void i_create_an_another_note(String text2) {
-		ExtentTest logInfo2=null;
+		ExtentTest test1=null;
 		try {
-			logInfo2=test2.createNode(new GherkinKeyword("When"), "i_create_an_another_note");
+			test1 = startScenario(scenarioL.get());
+			test1=test1.createNode(("When"),"I create an another note");
 			new LoginFlow().witeNote(text2);
-			logInfo2.pass("I create an another note");
-			logInfo2.addScreenCaptureFromPath(captureScreenShot(driver()));
+			//test1.pass("Test Step Has Passed");
+			testStepHandle("PASS",driver(),test1,null);
+			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
-			testStepHandle("FAIL",driver(),logInfo2,e);			
+			testStepHandle("FAIL",driver(),test1,e);			
 		}	
 	}
 
 	@Then("I validate the another note {string}")
 	public void i_validate_the_another_note(String text2) {
-		ExtentTest logInfo2=null;
+		ExtentTest test1=null;
 		try {
-			logInfo2=test2.createNode(new GherkinKeyword("Then"), "i_validate_the_another_note");
-			//text2="hola";
-			Assert.assertEquals(new LoginFlow().validateNote(text2),true);
-			logInfo2.pass("I validate the another note");
-			logInfo2.addScreenCaptureFromPath(captureScreenShot(driver()));
+		test1 = startScenario(scenarioL.get());
+			test1=test1.createNode(("Then"),"I validate the another note");
+			text2="hola";
+			Assert.assertTrue(new LoginFlow().validateNote(text2));
+			//test1.pass("Test Step Has Passed");
+			testStepHandle("PASS",driver(),test1,null);
+			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
-			testStepHandle("FAIL",driver(),logInfo2,e);			
+			testStepHandle("FAIL",driver(),test1,e);			
 		}	
 	}
+	
+	
 }
