@@ -15,20 +15,24 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.GherkinKeyword;
 import com.aventstack.extentreports.gherkin.model.Feature;
+import com.aventstack.extentreports.gherkin.model.IGherkinFormatterModel;
+import com.aventstack.extentreports.gherkin.model.Scenario;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.testautomation.utils.BaseClass;
 
+import gherkin.ast.Step;
+
 
 public class ExtentReportListener extends BaseClass{
 	
 	public static ExtentHtmlReporter report = null;
 	public static ExtentReports extent = null;
-	public static ExtentTest test1 = null;
-	public static ExtentTest test2 = null;
+	public static ExtentTest feature = null;
 	public static Map<String, ExtentTest> scenarios = new HashMap<>();
 	public static ThreadLocal<String> scenarioL = new ThreadLocal<String>();
 	
@@ -49,16 +53,10 @@ public class ExtentReportListener extends BaseClass{
 		return extent;
 	}
 	
-	public static void testStepHandle(String teststatus,WebDriver driver,ExtentTest extenttest,Throwable throwable) {
+	public static void testStepHandle(String teststatus,WebDriver driver,ExtentTest extenttest,Throwable throwable) throws IOException {
 		switch (teststatus) {
 		case "FAIL":		
-			extenttest.fail(MarkupHelper.createLabel("Test Step Is Failed : ", ExtentColor.RED));			
 			extenttest.error(throwable.fillInStackTrace());
-			try {
-				extenttest.addScreenCaptureFromPath(captureScreenShot(driver));
-			} catch(IOException e) {
-				e.printStackTrace();
-			}
 			if (driver != null) {
 				driver.quit();
 			}		
@@ -93,15 +91,15 @@ public class ExtentReportListener extends BaseClass{
 	}
 	
 	
-	public synchronized ExtentTest startScenario(String scenario) {
-		ExtentTest t = null;
+	public synchronized ExtentTest startScenario(String scenario) throws ClassNotFoundException {
+		ExtentTest scenario1=null;
 		if(!scenarios.containsKey(scenario)) {
-			t =  extent.createTest(Feature.class, scenario);
-			
-			scenarios.put(scenario,  t);
+			feature = extent.createTest(new GherkinKeyword("Feature"), "Galen Framework");
+			scenario1 = feature.createNode(new GherkinKeyword("Scenario"), scenario);
+			scenarios.put(scenario,scenario1);
 		} else {
-			t = scenarios.get(scenario);
+			scenario1 = scenarios.get(scenario);
 		}
-		return t;
+		return scenario1;
 	}
 }

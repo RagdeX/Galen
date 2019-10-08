@@ -46,7 +46,6 @@ public class BaseClass {
             WebDriver driver = driver();
             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
                     getChromeOptions());
-                    
             //TODO get session id for sauce labs
             //   String id = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
             // sessionId.set(id);

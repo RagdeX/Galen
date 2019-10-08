@@ -29,9 +29,7 @@ public class TestRunner{
 
 	    @Test(dataProvider = "features")    
 	    public void feature(PickleEventWrapper eventwrapper,CucumberFeatureWrapper cucumberFeature) throws Throwable {
-	    	
 	    	testNGCucumberRunner.runScenario(eventwrapper.getPickleEvent());
-	    	
 	    }
 
 	    @DataProvider(parallel=true)

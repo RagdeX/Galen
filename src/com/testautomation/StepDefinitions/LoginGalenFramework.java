@@ -5,6 +5,9 @@ import java.util.Properties;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.GherkinKeyword;
+import com.aventstack.extentreports.gherkin.model.Feature;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.testautomation.Flows.LoginFlow;
 import com.testautomation.Listeners.ExtentReportListener;
 import com.testautomation.utils.PropertiesFileReader;
@@ -19,9 +22,6 @@ import cucumber.api.Scenario;
 
 
 public class LoginGalenFramework extends ExtentReportListener{
-	
-	
-	
 	@Before
 	public void setUp(Scenario scenario) throws IOException {
 		PropertiesFileReader obj= new PropertiesFileReader();
@@ -42,48 +42,43 @@ public class LoginGalenFramework extends ExtentReportListener{
 	
 	
 	@Given("the user login into Galen FrameWork {string} {string}")
-	public void the_user_login_into_Galen_FrameWork(String user, String pass) {
-				new LoginFlow().login(user, pass);
+	public void the_user_login_into_Galen_FrameWork(String user, String pass) throws ClassNotFoundException {
+		new LoginFlow().login(user, pass);
+		
 	}
 
 	//***********************scenario *****************************************
 	@Given("I select the simple note")
-	public void i_click_on_the_simple_note() {
+	public void i_click_on_the_simple_note() throws IOException {
 		ExtentTest test1=null;
 		try {
 			test1 = startScenario(scenarioL.get());
-			test1= test1.createNode(("Given"),"I select the simple note");
 			new LoginFlow().selectTheSimpleNote();
-			testStepHandle("PASS",driver(),test1,null);
-			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
+			test1.createNode(new GherkinKeyword("Given"),"I select the simple note").pass(MarkupHelper.createLabel("Test Step has Passed", ExtentColor.GREEN)).addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),test1,e);			
 		}
 	}
 
 	@When("I create a simple note {string}")
-	public void i_create_a_simple_note(String text) {
+	public void i_create_a_simple_note(String text) throws IOException {
 		ExtentTest test1=null;
 		try {
 			test1 = startScenario(scenarioL.get());
-			test1 = test1.createNode(("When"),"I create a simple note");
 			new LoginFlow().witeNote(text);
-			testStepHandle("PASS",driver(),test1,null);
-			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
+			test1.createNode(new GherkinKeyword("When"),"I create a simple note").pass(MarkupHelper.createLabel("Test Step has Passed", ExtentColor.GREEN)).addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),test1,e);			
 		}	
 	}
 	
 	@Then("I validate the simple note {string}")
-	public void i_validate_the_simple_note(String text) {
+	public void i_validate_the_simple_note(String text) throws IOException {
 		ExtentTest test1=null;
 		try {
 			test1 = startScenario(scenarioL.get());
-			test1=test1.createNode(("Then"),"I validate the simple note");
 			Assert.assertTrue(new LoginFlow().validateNote(text));
-			testStepHandle("PASS",driver(),test1,null);
-			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
+			test1.createNode(new GherkinKeyword("Then"),"I validate the simple note").pass(MarkupHelper.createLabel("Test Step has Passed", ExtentColor.GREEN)).addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),test1,e);			
 		}	
@@ -91,45 +86,40 @@ public class LoginGalenFramework extends ExtentReportListener{
 	
 	//***********************scenario *****************************************
 	@Given("I select the another note")
-	public void i_select_the_another_note() {
-		ExtentTest test1=null;
+	public void i_select_the_another_note() throws IOException {
+	ExtentTest test1=null;
 		try {
 			test1 = startScenario(scenarioL.get());
-			test1= test1.createNode(("Given"),"I select the another note");
 			new LoginFlow().selectTheAnotherNote(); 
-			testStepHandle("PASS",driver(),test1,null);
-			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
+			test1.createNode(new GherkinKeyword("Given"),"I select the another note").pass(MarkupHelper.createLabel("Test Step has Passed", ExtentColor.GREEN)).addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),test1,e);			
 		}	
 	}
 
 	@When("I create an another note {string}")
-	public void i_create_an_another_note(String text2) {
-		ExtentTest test1=null;
+	public void i_create_an_another_note(String text2) throws IOException {
+	ExtentTest test1=null;
 		try {
 			test1 = startScenario(scenarioL.get());
-			test1=test1.createNode(("When"),"I create an another note");
 			new LoginFlow().witeNote(text2);
-			testStepHandle("PASS",driver(),test1,null);
-			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
+			test1.createNode(new GherkinKeyword("When"),"I create an another note").pass(MarkupHelper.createLabel("Test Step has Passed", ExtentColor.GREEN)).addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),test1,e);			
 		}	
 	}
 
 	@Then("I validate the another note {string}")
-	public void i_validate_the_another_note(String text2) {
-		ExtentTest test1=null;
+	public void i_validate_the_another_note(String text2) throws IOException, ClassNotFoundException {
+	ExtentTest test1=null;
 		try {
 			test1 = startScenario(scenarioL.get());
-			test1=test1.createNode(("Then"),"I validate the another note");
 			text2="hola";
 			Assert.assertTrue(new LoginFlow().validateNote(text2));
-			testStepHandle("PASS",driver(),test1,null);
-			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
+			test1.createNode(new GherkinKeyword("Then"),"I validate the another note").pass(MarkupHelper.createLabel("Test Step has Passed", ExtentColor.GREEN)).addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
-			testStepHandle("FAIL",driver(),test1,e);			
+			test1.createNode(new GherkinKeyword("When"),"I validate the another note").fail(MarkupHelper.createLabel("Test Step has Failed", ExtentColor.RED)).addScreenCaptureFromPath(captureScreenShot(driver()));
+			testStepHandle("FAIL",driver(),test1,e);
 		}	
 	}
 }
