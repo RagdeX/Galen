@@ -54,7 +54,6 @@ public class LoginGalenFramework extends ExtentReportListener{
 			test1 = startScenario(scenarioL.get());
 			test1= test1.createNode(("Given"),"I select the simple note");
 			new LoginFlow().selectTheSimpleNote();
-			//test1.pass("Test Step Has Passed");
 			testStepHandle("PASS",driver(),test1,null);
 			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
@@ -69,7 +68,6 @@ public class LoginGalenFramework extends ExtentReportListener{
 			test1 = startScenario(scenarioL.get());
 			test1 = test1.createNode(("When"),"I create a simple note");
 			new LoginFlow().witeNote(text);
-			//test1.pass("Test Step Has Passed");
 			testStepHandle("PASS",driver(),test1,null);
 			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
@@ -84,7 +82,6 @@ public class LoginGalenFramework extends ExtentReportListener{
 			test1 = startScenario(scenarioL.get());
 			test1=test1.createNode(("Then"),"I validate the simple note");
 			Assert.assertTrue(new LoginFlow().validateNote(text));
-			//test1.pass("Test Step Has Passed");
 			testStepHandle("PASS",driver(),test1,null);
 			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
@@ -100,7 +97,6 @@ public class LoginGalenFramework extends ExtentReportListener{
 			test1 = startScenario(scenarioL.get());
 			test1= test1.createNode(("Given"),"I select the another note");
 			new LoginFlow().selectTheAnotherNote(); 
-			//test1.pass("Test Step Has Passed");
 			testStepHandle("PASS",driver(),test1,null);
 			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
@@ -115,7 +111,6 @@ public class LoginGalenFramework extends ExtentReportListener{
 			test1 = startScenario(scenarioL.get());
 			test1=test1.createNode(("When"),"I create an another note");
 			new LoginFlow().witeNote(text2);
-			//test1.pass("Test Step Has Passed");
 			testStepHandle("PASS",driver(),test1,null);
 			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
@@ -127,17 +122,14 @@ public class LoginGalenFramework extends ExtentReportListener{
 	public void i_validate_the_another_note(String text2) {
 		ExtentTest test1=null;
 		try {
-		test1 = startScenario(scenarioL.get());
+			test1 = startScenario(scenarioL.get());
 			test1=test1.createNode(("Then"),"I validate the another note");
 			text2="hola";
 			Assert.assertTrue(new LoginFlow().validateNote(text2));
-			//test1.pass("Test Step Has Passed");
 			testStepHandle("PASS",driver(),test1,null);
 			test1.addScreenCaptureFromPath(captureScreenShot(driver()));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL",driver(),test1,e);			
 		}	
 	}
-	
-	
 }
