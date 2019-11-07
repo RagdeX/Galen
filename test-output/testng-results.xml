@@ -2,77 +2,16 @@
 <testng-results skipped="0" failed="2" ignored="0" total="5" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="51622" started-at="2019-11-07T10:42:14 CST" finished-at="2019-11-07T10:43:06 CST">
+  <suite name="Suite" duration-ms="52432" started-at="2019-11-07T15:07:41 CST" finished-at="2019-11-07T15:08:34 CST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="51622" started-at="2019-11-07T10:42:14 CST" finished-at="2019-11-07T10:43:06 CST">
+    <test name="Test" duration-ms="52432" started-at="2019-11-07T15:07:41 CST" finished-at="2019-11-07T15:08:34 CST">
       <class name="com.testautomation.TestRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="setUpClass" is-config="true" duration-ms="381" started-at="2019-11-07T10:42:14 CST" finished-at="2019-11-07T10:42:15 CST">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="setUpClass" is-config="true" duration-ms="449" started-at="2019-11-07T15:07:42 CST" finished-at="2019-11-07T15:07:42 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="feature" duration-ms="21137" started-at="2019-11-07T10:42:15 CST" data-provider="features" finished-at="2019-11-07T10:42:36 CST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Add a simple note 2"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Galen Framework Outline"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="feature" duration-ms="50776" started-at="2019-11-07T10:42:15 CST" data-provider="features" finished-at="2019-11-07T10:43:05 CST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Add another note 2"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Galen Framework Outline"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[PRUEBA FALLO ASSERT TESTNG]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
-at org.testng.Assert.fail(Assert.java:97)
-at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
-at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:109)
-at ✽.I validate the another note "Segundo Mensaje"(./features/GalenPageTesting.feature:47)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="feature" duration-ms="21357" started-at="2019-11-07T10:42:15 CST" data-provider="features" finished-at="2019-11-07T10:42:36 CST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Add a simple note 1"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Galen Framework Outline"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="feature" duration-ms="21214" started-at="2019-11-07T10:42:15 CST" data-provider="features" finished-at="2019-11-07T10:42:36 CST">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="feature" duration-ms="23440" started-at="2019-11-07T15:07:42 CST" data-provider="features" finished-at="2019-11-07T15:08:06 CST">
           <params>
             <param index="0">
               <value>
@@ -88,7 +27,23 @@ at ✽.I validate the another note "Segundo Mensaje"(./features/GalenPageTesting
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="feature" duration-ms="50939" started-at="2019-11-07T10:42:15 CST" data-provider="features" finished-at="2019-11-07T10:43:06 CST">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="feature" duration-ms="23518" started-at="2019-11-07T15:07:42 CST" data-provider="features" finished-at="2019-11-07T15:08:06 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Add a simple note 2"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Galen Framework Outline"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="feature" duration-ms="51674" started-at="2019-11-07T15:07:42 CST" data-provider="features" finished-at="2019-11-07T15:08:34 CST">
           <params>
             <param index="0">
               <value>
@@ -109,7 +64,7 @@ at ✽.I validate the another note "Segundo Mensaje"(./features/GalenPageTesting
               <![CDATA[java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
 at org.testng.Assert.fail(Assert.java:97)
 at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
-at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:109)
+at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:112)
 at ✽.I validate the another note "Segundo Mensaje"(./features/GalenPageTesting.feature:38)
 ]]>
             </full-stacktrace>
@@ -117,7 +72,52 @@ at ✽.I validate the another note "Segundo Mensaje"(./features/GalenPageTesting
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="tearDownClass" is-config="true" duration-ms="10" started-at="2019-11-07T10:43:06 CST" finished-at="2019-11-07T10:43:06 CST">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="feature" duration-ms="21235" started-at="2019-11-07T15:07:42 CST" data-provider="features" finished-at="2019-11-07T15:08:03 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Add a simple note 1"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Galen Framework Outline"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="feature" duration-ms="51320" started-at="2019-11-07T15:07:42 CST" data-provider="features" finished-at="2019-11-07T15:08:33 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Add another note 2"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Galen Framework Outline"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[PRUEBA FALLO ASSERT TESTNG]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
+at org.testng.Assert.fail(Assert.java:97)
+at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
+at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:112)
+at ✽.I validate the another note "Segundo Mensaje"(./features/GalenPageTesting.feature:47)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@fe18270]" name="tearDownClass" is-config="true" duration-ms="11" started-at="2019-11-07T15:08:34 CST" finished-at="2019-11-07T15:08:34 CST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

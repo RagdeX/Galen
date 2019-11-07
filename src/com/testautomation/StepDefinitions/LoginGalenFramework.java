@@ -66,6 +66,7 @@ public class LoginGalenFramework extends ExtentReportListener{
 	}
 	
 	//***********************scenario *****************************************
+	
 	@Given("I select the another note")
 	public void i_select_the_another_note() throws IOException {
 		base.name=base.name+"2";
@@ -98,6 +99,7 @@ public class LoginGalenFramework extends ExtentReportListener{
 
 	@Then("I validate the another note {string}")
 	public void i_validate_the_another_note(String text2) throws IOException, ClassNotFoundException {
+		takeScreenshot(driver(),"Image");
 		ExtentTest test1=null;
 		test1 = startScenario(scenarioL.get());
 		test1=test1.createNode(new GherkinKeyword("Then"),"I validate the another note");
@@ -107,7 +109,6 @@ public class LoginGalenFramework extends ExtentReportListener{
 			testStepHandle("PASS",driver(),test1,null);
 			}catch(NoSuchElementException ex){
 			testStepHandle("FAIL",driver(),test1,ex);
-			
 			}
 		}
 }

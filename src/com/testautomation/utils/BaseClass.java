@@ -1,15 +1,20 @@
 package com.testautomation.utils;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.TakesScreenshot;
+
 
 public class BaseClass {
 	
@@ -62,4 +67,8 @@ public class BaseClass {
             options.setCapability("enableVideo",true);
             return options;
         }
+	 
+	    public void takeScreenshot(WebDriver driver, String nameTest) {
+	    	Allure.addAttachment(nameTest, new ByteArrayInputStream(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES)));
+	    }
 }

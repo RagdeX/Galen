@@ -7,17 +7,10 @@ import cucumber.api.testng.TestNGCucumberRunner;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.gherkin.model.Feature;
 
 @CucumberOptions (features = "./features/",
 				glue = {"com.testautomation.StepDefinitions"},
