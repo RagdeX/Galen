@@ -4,12 +4,12 @@
   <listeners>
     <listener class-name="com.testautomation.Listeners.ITestListenerImpl"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test(failed)" parallel="methods">
     <classes>
       <class name="com.testautomation.TestRunner.TestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="feature" invocation-numbers="1"/>
+          <include name="feature" invocation-numbers="4 3"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.testautomation.TestRunner.TestRunner -->

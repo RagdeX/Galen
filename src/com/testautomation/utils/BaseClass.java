@@ -3,7 +3,6 @@ package com.testautomation.utils;
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -12,12 +11,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-
-
 public class BaseClass {
 	
+	public String StepInfo;
+	public String name;
 	public Logger logger;
-	
 	
 	    public static WebDriver driver() {
 	        return  DriverSetUp.getDriver();
@@ -45,16 +43,11 @@ public class BaseClass {
 	    public void startDriver2(String browserName) throws IOException{
             WebDriver driver = driver();
             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-                    getChromeOptions());
-            //TODO get session id for sauce labs
-            //   String id = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
-            // sessionId.set(id);
-            //log.debug("set up browser ");
+            getChromeOptions());
             DriverSetUp.setDriver(driver);
         }
-          
-        //Get Chrome Options
-        public ChromeOptions getChromeOptions() {
+
+	    public ChromeOptions getChromeOptions() {
             ChromeOptions options = new ChromeOptions();
             //options.addArguments("--start-maximized");
             options.addArguments("--ignore-certificate-errors");

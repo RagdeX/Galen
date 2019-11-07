@@ -11,25 +11,25 @@ public class ITestListenerImpl extends ExtentReportListener implements ITestList
 	public static ExtentReports extent;
 	
 	public void onStart(ITestContext context) {
-		System.out.println("Execution STARTED"); 
+		System.out.println("Execution STARTED LISTENER TESTNG"); 
 		extent=setUpReport();
 	}
 	
 	public void onFinish(ITestContext context) {
-		System.out.println("Execution COMPLETED"); 
+		System.out.println("Execution COMPLETED LISTENER TESTNG "); 
 		extent.flush();
-		System.out.println("Extent Report GENERATED. . . .");
+		System.out.println("Extent Report GENERATED LISTENER TESTG");
 	}
 	
 	public void onTestSuccess(ITestResult context) {
-		System.out.println("P A S S"); 
+		System.out.println("PASS LISTENER TESTNG"); 
 	}
 	
 	public void onTestFailure(ITestResult context) {
-		System.out.println("F A I L"); 
+		System.out.println("FAIL LISTENER TESTNG"); 
 	}
 	
 	public void onTestSkipped(ITestResult context) {
-		System.out.println("S K I P"); 
+		System.out.println("SKIP LISTENER TESTNG"); 
 	}
 }

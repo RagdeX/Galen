@@ -7,26 +7,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-
+import org.testng.Assert;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.GherkinKeyword;
-import com.aventstack.extentreports.gherkin.model.Feature;
-import com.aventstack.extentreports.gherkin.model.IGherkinFormatterModel;
-import com.aventstack.extentreports.gherkin.model.Scenario;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.testautomation.utils.BaseClass;
-
-import gherkin.ast.Step;
-
 
 public class ExtentReportListener extends BaseClass{
 	
@@ -42,30 +35,31 @@ public class ExtentReportListener extends BaseClass{
 		report.config().setDocumentTitle("Automation Test Report");
 		report.config().setReportName("Automation Test Report");
 		report.config().setTheme(Theme.STANDARD);
-		System.out.println("Extent Report SET UP . . .");
+		System.out.println("Extent Report SETUP METHOD");
 		report.start();
 		extent = new ExtentReports();
 		extent.attachReporter(report);		
 		extent.setSystemInfo("Application", "Galen Framework");
 		extent.setSystemInfo("Operating System", System.getProperty("os.name"));
 		extent.setSystemInfo("User Name", System.getProperty("user.name"));
-		System.out.println("INFO SYSTEM Extent Report");		
+		System.out.println("INFO SYSTEM METHOD");		
 		return extent;
 	}
 	
 	public static void testStepHandle(String teststatus,WebDriver driver,ExtentTest extenttest,Throwable throwable) throws IOException {
 		switch (teststatus) {
-		case "FAIL":		
-			extenttest.error(throwable.fillInStackTrace());
-			if (driver != null) {
-				driver.quit();
-			}		
-		break;
-		case "PASS":			
-			extenttest.pass(MarkupHelper.createLabel("Test Step Is Passed : ", ExtentColor.GREEN));
-			break;
-		default:
-			break;
+		case "FAIL":{		
+					extenttest.fail(MarkupHelper.createLabel("Test Scenario is Failed : La validacion fallo", ExtentColor.RED));			
+					extenttest.addScreenCaptureFromPath(captureScreenShot(driver()));
+					extenttest.error(throwable.fillInStackTrace());
+					Assert.fail("PRUEBA FALLO ASSERT TESTNG");
+			}break;
+		case "PASS":{			
+					extenttest.pass(MarkupHelper.createLabel("Test Step Is Passed : ", ExtentColor.GREEN));
+					extenttest.addScreenCaptureFromPath(captureScreenShot(driver()));
+			}break;
+		default:{
+			}break;
 		}
 	}
 	
@@ -89,7 +83,6 @@ public class ExtentReportListener extends BaseClass{
 		}
 		return str;
 	}
-	
 	
 	public synchronized ExtentTest startScenario(String scenario) throws ClassNotFoundException {
 		ExtentTest scenario1=null;

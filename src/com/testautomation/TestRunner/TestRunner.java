@@ -4,6 +4,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.PickleEventWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +30,9 @@ public class TestRunner{
 	        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 	    }
 
-	    @Test(dataProvider = "features")    
+	    @Test(dataProvider = "features") 
+	    @Severity(SeverityLevel.NORMAL)
+	    @Description("Test case Descripcion: Validation of Simple note and Another note")
 	    public void feature(PickleEventWrapper eventwrapper,CucumberFeatureWrapper cucumberFeature) throws Throwable {
 	    	testNGCucumberRunner.runScenario(eventwrapper.getPickleEvent());
 	    }

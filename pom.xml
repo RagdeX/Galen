@@ -15,6 +15,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<allure.version>2.12.1</allure.version>
+		<java.version>1.8</java.version>
+		<aspectj.version>1.8.10</aspectj.version>
 	</properties>
 
 	<build>
@@ -30,19 +33,70 @@
 						<target>1.8</target>
 					</configuration>
 				</plugin>
+				<plugin>
+                    <groupId>io.qameta.allure</groupId>
+                    <artifactId>allure-maven</artifactId>
+                    <version>2.8</version>
+                </plugin>
+
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>3.0.0-M1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>3.0.0-M1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.7.1</version>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.0.0-M3</version>
-					<configuration>
-						<testFailureIgnore>true</testFailureIgnore>
-						<shutdown>kill</shutdown>
-						<suiteXmlFiles>
-							<suiteXmlFile>testng.xml</suiteXmlFile>
-						</suiteXmlFiles>
-						<forkCount>1</forkCount>
-					</configuration>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.22.2</version>
+    <configuration>
+        <testFailureIgnore> false </testFailureIgnore>
+        <parallel>classes</parallel>
+
+        <perCoreThreadCount>false</perCoreThreadCount>
+        <properties>
+            <property>
+                <name>dataproviderthreadcount</name>
+                <value>5</value>
+            </property>
+        </properties>
+
+
+        <argLine>
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+            -Dcucumber.options="--plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
+        </argLine>
+
+        <systemPropertyVariables>
+            <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+
+        </systemPropertyVariables>
+
+
+
+
+    </configuration>
+
+
+					<dependencies>
+						<dependency>
+							<groupId>org.aspectj</groupId>
+							<artifactId>aspectjweaver</artifactId>
+							<version>1.9.4</version>
+						</dependency>
+					</dependencies>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -53,6 +107,11 @@
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -114,5 +173,19 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-cucumber4-jvm</artifactId>
+			<version>2.13.0</version>
+		</dependency>
+
+
+
 	</dependencies>
 </project>

@@ -5,7 +5,6 @@ import com.testautomation.utils.BaseActions;
 
 public class LoginPage extends BaseActions{
 		
-	// AQUI ESTUBO PEDRO SANTILLAN
 	public By theLoginButton () {
 		return By.xpath("//button[@class='btn btn-lg btn-primary button-login']");
 	}
@@ -45,17 +44,4 @@ public class LoginPage extends BaseActions{
 	public By theAnotherNoteLink() {
 		return By.xpath("//div[@class='list-group']/a/h4[contains(text(),'Another note')]");
 	}
-	/*
-	public By theAddNoteButton() {
-		return By.xpath("//button");
-	}
-	
-	public By theTitleTxt() {
-		return By.xpath("//input[@type='text']");
-	}
-		
-	public By theNoteCancelButton() {
-		return By.name("//button[2]");
-	}
-	*/
 }
