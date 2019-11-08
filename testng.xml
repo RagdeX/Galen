@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="1" name="Test" parallel="false">
+<suite name="Suite" parallel="classes">
+  <test thread-count="2" name="Test" parallel="true">
     <classes>
       <class name="com.testautomation.StepDefinitions.LoginGalenFramework"/>
       <class name="com.testautomation.utils.BaseClass"/>
       <class name="com.testautomation.TestRunner.TestRunner"/>
-      <class name="com.testautomation.Listeners.ITestListenerImpl"/>
+<!--       <class name="com.testautomation.Listeners.ITestListenerImpl"/> -->
     </classes>
   </test> <!-- Test -->
    <listeners>
   <listener class-name="com.testautomation.Listeners.ITestListenerImpl"></listener>
   </listeners>
-</suite> <!-- Suite -->
+</suite>

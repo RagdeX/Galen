@@ -1,6 +1,10 @@
 package com.testautomation
 .Flows;
 
+
+
+import org.openqa.selenium.NoSuchElementException;
+
 import com.testautomation.PageObjects.LoginPage;
 
 public class LoginFlow extends LoginPage {
@@ -34,7 +38,7 @@ public class LoginFlow extends LoginPage {
 		click(theSaveButton());
 	}
 	
-	public boolean validateNote(String text) {
+	public boolean validateNote(String text) throws NoSuchElementException {
 	 return isElementPresent(theWrittenText(text));
 	}
 	

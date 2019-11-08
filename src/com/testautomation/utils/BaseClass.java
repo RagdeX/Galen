@@ -1,42 +1,28 @@
 package com.testautomation.utils;
 
-import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.testautomation.Listeners.ExtentReportListener;
 
 public class BaseClass {
 	
 	public Logger logger;
-	public static ExtentHtmlReporter report = null;
-	public static ExtentReports extent = null;
-	public static ExtentTest test1 = null;
-	public static ExtentTest test2 = null;
-	
+		
 	    public WebDriver driver() {
 	        return  DriverSetUp.getDriver();
 	    }
 	    
-	    public void startDriver(String browserName) {
+	    public void startLocalDriver(String browserName) {
 	        WebDriver driver = driver();
 			if(browserName.equals("Chrome")) {
 	        System.setProperty("webdriver.chrome.driver", ".\\utilities\\chromedriver.exe");
@@ -54,64 +40,35 @@ public class BaseClass {
 		        DriverSetUp.setDriver(driver);
 			}
 	    }
-	  
-		public static ExtentReports setUpReport() {
-			String reportLocation = "./Reports/Extent_Report.html";
-			report = new ExtentHtmlReporter(reportLocation);		
-			report.config().setDocumentTitle("Automation Test Report");
-			report.config().setReportName("Automation Test Report");
-			report.config().setTheme(Theme.STANDARD);
-			System.out.println("Extent Report location initialized . . .");
-			report.start();
-			extent = new ExtentReports();
-			extent.attachReporter(report);		
-			extent.setSystemInfo("Application", "Galen Framework");
-			extent.setSystemInfo("Operating System", System.getProperty("os.name"));
-			extent.setSystemInfo("User Name", System.getProperty("user.name"));
-			System.out.println("System Info. set in Extent Report");		
-			return extent;
-		}
-		
-		public static void testStepHandle(String teststatus,WebDriver driver,ExtentTest extenttest,Throwable throwable) {
-			switch (teststatus) {
-			case "FAIL":		
-				extenttest.fail(MarkupHelper.createLabel("Test Scenario is Failed : ", ExtentColor.RED));			
-				extenttest.error(throwable.fillInStackTrace());
-				try {
-					extenttest.addScreenCaptureFromPath(captureScreenShot(driver));
-				} catch(IOException e) {
-					e.printStackTrace();
-				}
-				if (driver != null) {
-					driver.quit();
-				}		
-			break;
-			case "PASS":			
-				extenttest.pass(MarkupHelper.createLabel("Test Scenario is Passed : ", ExtentColor.GREEN));
-				break;
-			default:
-				break;
-			}
-		}
-		
-		public static String captureScreenShot(WebDriver driver) throws IOException {
-			TakesScreenshot screen = (TakesScreenshot) driver;
-			File src = screen.getScreenshotAs(OutputType.FILE);
-			String dest = System.getProperty("user.dir") + "/Reports/Screenshots/"+ getcurrentdateandtime() + ".png";
-			File target = new File(dest);
-			FileUtils.copyFile(src, target);
-			return dest;
-		}
+	    
+	    public void startRemoteDriver(String browserName) throws IOException{
+	    	WebDriver driver = driver();
+	        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+	        		getChromeOptions());
+	                
+	        //TODO get session id for sauce labs
+	        //   String id = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+	        // sessionId.set(id);
+	        //log.debug("set up browser ");
+	        DriverSetUp.setDriver(driver);
+	    }
+	      
+	    //Get Chrome Options
+	    public ChromeOptions getChromeOptions() {
 
-		private static String getcurrentdateandtime() {
-			String str = null;
-			try {
-				DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss:SSS");
-				Date date = new Date();
-				str = dateFormat.format(date);
-				str = str.replace(" ", "").replaceAll("/", "").replaceAll(":", "");
-			} catch (Exception e) {
-			}
-			return str;
-		}
+	        ChromeOptions options = new ChromeOptions();
+	        //options.addArguments("--start-maximized");
+	        options.addArguments("--ignore-certificate-errors");
+	        options.addArguments("--disable-popup-blocking");
+	        options.addArguments("screenshot");
+	        //options.addArguments("--incognito");
+	        //options.addArguments("headless");
+	        //options.addArguments("privileged")
+	        //options.addArguments("disable-gpu")
+	        options.addArguments("no-sandbox");
+	        options.addArguments("disable-infobars");
+	        options.setCapability("enableVideo",true);
+	        return options;
+	    }
+	  		
 }

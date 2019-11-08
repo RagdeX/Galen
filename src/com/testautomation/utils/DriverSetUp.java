@@ -6,7 +6,8 @@ import org.openqa.selenium.WebDriver;
 public class DriverSetUp extends InheritableThreadLocal<WebDriver>{
 	
 	private static DriverSetUp instance = new DriverSetUp();
-    public static WebDriver getDriver() {
+    
+	public static WebDriver getDriver() {
         return instance.get();
     }
 
