@@ -6,10 +6,11 @@ import com.testautomation.Flows.LoginFlow;
 import com.testautomation.Listeners.ExtentReportListener;
 import com.testautomation.utils.BaseClass;
 import com.testautomation.utils.PropertiesFileReader;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
+
+import io.cucumber.core.api.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 
 public class HooksAndBackGround extends ExtentReportListener{
 	
@@ -30,7 +31,6 @@ public class HooksAndBackGround extends ExtentReportListener{
 		scenarioL.set(scenario.getName());
 	}
 	
-	@SuppressWarnings("static-access")
 	@After
 	public void tearDown(Scenario scenario) throws Throwable{
 		System.out.println("AFTER "+scenario.getName());

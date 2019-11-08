@@ -8,9 +8,9 @@ import com.testautomation.Listeners.ExtentReportListener;
 import com.testautomation.utils.BaseClass;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
 
 public class LoginGalenFramework extends ExtentReportListener{
 	
