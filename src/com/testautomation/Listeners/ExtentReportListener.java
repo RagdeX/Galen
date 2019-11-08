@@ -52,7 +52,7 @@ public class ExtentReportListener extends BaseClass{
 					extenttest.fail(MarkupHelper.createLabel("Test Scenario is Failed : La validacion fallo", ExtentColor.RED));			
 					extenttest.addScreenCaptureFromPath(captureScreenShot(driver()));
 					extenttest.error(throwable.fillInStackTrace());
-					Assert.fail("PRUEBA FALLO ASSERT TESTNG");
+					Assert.fail("PRUEBA FALLO ASSERT TESTNG",throwable.fillInStackTrace());
 			}break;
 		case "PASS":{			
 					extenttest.pass(MarkupHelper.createLabel("Test Step Is Passed : ", ExtentColor.GREEN));
