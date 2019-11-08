@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods, 2 failed,   3 passed</span>
+                    <span class="method-stats">5 methods, 3 failed,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -100,6 +100,11 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
                     <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunner" hash-for-method="feature(&quot;Add a simple note 1&quot;, &quot;Galen Framework Outline&quot;)">feature("Add a simple note 1", "Galen Framework Outline")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunner" hash-for-method="feature(&quot;Add another note 2&quot;, &quot;Galen Framework Outline&quot;)">feature("Add another note 2", "Galen Framework Outline")</a> <!-- method navigator-link -->
@@ -121,17 +126,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunner" hash-for-method="feature(&quot;Add a simple note 3&quot;, &quot;Galen Framework Outline&quot;)">feature("Add a simple note 3", "Galen Framework Outline")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunner" hash-for-method="feature(&quot;Add a simple note 1&quot;, &quot;Galen Framework Outline&quot;)">feature("Add a simple note 1", "Galen Framework Outline")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunner" hash-for-method="feature(&quot;Add a simple note 2&quot;, &quot;Galen Framework Outline&quot;)">feature("Add a simple note 2", "Galen Framework Outline")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.testautomation.TestRunner.TestRunner" hash-for-method="feature(&quot;Add a simple note 3&quot;, &quot;Galen Framework Outline&quot;)">feature("Add a simple note 3", "Galen Framework Outline")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -154,6 +154,42 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="feature(&quot;Add a simple note 1&quot;, &quot;Galen Framework Outline&quot;)">
+                  </a> <!-- feature("Add a simple note 1", "Galen Framework Outline") -->
+                  <span class="method-name">feature</span>
+                  <span class="parameters">("Add a simple note 1", "Galen Framework Outline")</span>
+                  <div class="stack-trace">java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
+	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
+	at com.testautomation.StepDefinitions.LoginGalenFramework.i_create_a_simple_note(LoginGalenFramework.java:50)
+	at ✽.I create a simple note &quot;Primer Mensaje&quot;(file:features/GalenPageTesting.feature:9)
+Caused by: java.io.IOException: Failed to copy full contents from &apos;C:\Users\PEDRO_~1\AppData\Local\Temp\screenshot4364598214222320578.png&apos; to &apos;C:\Users\Pedro_Santillan\git\Galen\Reports\Screenshots\11082019124350596.png&apos; Expected length: 75487 Actual: 75592
+	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
+	at com.testautomation.StepDefinitions.LoginGalenFramework.i_create_a_simple_note(LoginGalenFramework.java:50)
+	at cucumber.runtime.Utils$1.call(Utils.java:26)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:20)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
+	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
+	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+	at cucumber.runner.TestStep.run(TestStep.java:50)
+	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
+	at cucumber.runner.TestCase.run(TestCase.java:46)
+	at cucumber.runner.Runner.runPickle(Runner.java:50)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
+	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:24)
+	at com.testautomation.TestRunner.TestRunner.feature(TestRunner.java:30)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 14 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="feature(&quot;Add another note 2&quot;, &quot;Galen Framework Outline&quot;)">
                   </a> <!-- feature("Add another note 2", "Galen Framework Outline") -->
                   <span class="method-name">feature</span>
@@ -161,29 +197,30 @@
                   <div class="stack-trace">java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
 	at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:111)
-	at ✽.I validate the another note &quot;Segundo Mensaje&quot;(./features/GalenPageTesting.feature:47)
+	at ✽.I validate the another note &quot;Segundo Mensaje&quot;(file:features/GalenPageTesting.feature:47)
 Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),&apos;hola&apos;)]&quot;}
   (Session info: chrome=78.0.3904.97)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;EPMXGUAW0506&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60660}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 1d2097eb5852c80a2753b198c6350aa7
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65226}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 33379d1d6a043aee54b5c9b708333ca8
 *** Element info: {Using=xpath, value=//*[contains(text(),&apos;hola&apos;)]}
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
 	at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:111)
 	at cucumber.runtime.Utils$1.call(Utils.java:26)
 	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
 	at cucumber.runtime.Utils.invoke(Utils.java:20)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:49)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
 	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
-	at cucumber.runner.TestStep.executeStep(TestStep.java:63)
-	at cucumber.runner.TestStep.run(TestStep.java:49)
+	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+	at cucumber.runner.TestStep.run(TestStep.java:50)
 	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
-	at cucumber.runner.TestCase.run(TestCase.java:44)
-	at cucumber.runner.Runner.runPickle(Runner.java:40)
-	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:68)
+	at cucumber.runner.TestCase.run(TestCase.java:46)
+	at cucumber.runner.Runner.runPickle(Runner.java:50)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
+	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:24)
 	at com.testautomation.TestRunner.TestRunner.feature(TestRunner.java:30)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
@@ -204,29 +241,30 @@ Session ID: 1d2097eb5852c80a2753b198c6350aa7
                   <div class="stack-trace">java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
 	at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:111)
-	at ✽.I validate the another note &quot;Segundo Mensaje&quot;(./features/GalenPageTesting.feature:38)
+	at ✽.I validate the another note &quot;Segundo Mensaje&quot;(file:features/GalenPageTesting.feature:38)
 Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[contains(text(),&apos;hola&apos;)]&quot;}
   (Session info: chrome=78.0.3904.97)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;EPMXGUAW0506&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60664}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: d0cb1a5c063617b1cb73a7b5a4709dfc
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b04ac6c99e65a0f839953bb3457333ea
 *** Element info: {Using=xpath, value=//*[contains(text(),&apos;hola&apos;)]}
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
 	at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:111)
 	at cucumber.runtime.Utils$1.call(Utils.java:26)
 	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
 	at cucumber.runtime.Utils.invoke(Utils.java:20)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:49)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
 	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
-	at cucumber.runner.TestStep.executeStep(TestStep.java:63)
-	at cucumber.runner.TestStep.run(TestStep.java:49)
+	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+	at cucumber.runner.TestStep.run(TestStep.java:50)
 	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
-	at cucumber.runner.TestCase.run(TestCase.java:44)
-	at cucumber.runner.Runner.runPickle(Runner.java:40)
-	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:68)
+	at cucumber.runner.TestCase.run(TestCase.java:46)
+	at cucumber.runner.Runner.runPickle(Runner.java:50)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
+	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:24)
 	at com.testautomation.TestRunner.TestRunner.feature(TestRunner.java:30)
 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
@@ -248,26 +286,18 @@ Session ID: d0cb1a5c063617b1cb73a7b5a4709dfc
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="feature(&quot;Add a simple note 3&quot;, &quot;Galen Framework Outline&quot;)">
-                  </a> <!-- feature("Add a simple note 3", "Galen Framework Outline") -->
-                  <span class="method-name">feature</span>
-                  <span class="parameters">("Add a simple note 3", "Galen Framework Outline")</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="feature(&quot;Add a simple note 1&quot;, &quot;Galen Framework Outline&quot;)">
-                  </a> <!-- feature("Add a simple note 1", "Galen Framework Outline") -->
-                  <span class="method-name">feature</span>
-                  <span class="parameters">("Add a simple note 1", "Galen Framework Outline")</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="feature(&quot;Add a simple note 2&quot;, &quot;Galen Framework Outline&quot;)">
                   </a> <!-- feature("Add a simple note 2", "Galen Framework Outline") -->
                   <span class="method-name">feature</span>
                   <span class="parameters">("Add a simple note 2", "Galen Framework Outline")</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="feature(&quot;Add a simple note 3&quot;, &quot;Galen Framework Outline&quot;)">
+                  </a> <!-- feature("Add a simple note 3", "Galen Framework Outline") -->
+                  <span class="method-name">feature</span>
+                  <span class="parameters">("Add a simple note 3", "Galen Framework Outline")</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -334,28 +364,28 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'feature')
 data.setCell(0, 2, 'com.testautomation.TestRunner.TestRunner')
-data.setCell(0, 3, 50287);
+data.setCell(0, 3, 73449);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'feature')
 data.setCell(1, 2, 'com.testautomation.TestRunner.TestRunner')
-data.setCell(1, 3, 48442);
+data.setCell(1, 3, 68080);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'feature')
 data.setCell(2, 2, 'com.testautomation.TestRunner.TestRunner')
-data.setCell(2, 3, 20094);
+data.setCell(2, 3, 38413);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'feature')
 data.setCell(3, 2, 'com.testautomation.TestRunner.TestRunner')
-data.setCell(3, 3, 19692);
+data.setCell(3, 3, 38300);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'feature')
 data.setCell(4, 2, 'com.testautomation.TestRunner.TestRunner')
-data.setCell(4, 3, 18359);
+data.setCell(4, 3, 37969);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -387,32 +417,34 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">feature("Add a simple note 3", "Galen Framework Outline")</span>
-                <span class="method-start">302 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">feature("Add another note 1", "Galen Framework Outline")</span>
+                <span class="method-start">623 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">feature("Add another note 2", "Galen Framework Outline")</span>
-                <span class="method-start">302 ms</span>
+                <span class="method-start">624 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">feature("Add a simple note 3", "Galen Framework Outline")</span>
+                <span class="method-start">624 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">feature("Add another note 1", "Galen Framework Outline")</span>
-                <span class="method-start">302 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
                 <span class="method-name">feature("Add a simple note 1", "Galen Framework Outline")</span>
-                <span class="method-start">302 ms</span>
+                <span class="method-start">624 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">feature("Add a simple note 2", "Galen Framework Outline")</span>
-                <span class="method-start">305 ms</span>
+                <span class="method-start">627 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">50592 ms</span>
+                <span class="method-start">74076 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
