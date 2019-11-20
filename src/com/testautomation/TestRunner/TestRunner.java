@@ -1,9 +1,9 @@
 package com.testautomation.TestRunner;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.testng.CucumberFeatureWrapper;
-import cucumber.api.testng.PickleEventWrapper;
-import cucumber.api.testng.TestNGCucumberRunner;
+import io.cucumber.testng.CucumberFeatureWrapper;
+import io.cucumber.testng.CucumberOptions;
+import io.cucumber.testng.TestNGCucumberRunner;
+import io.cucumber.testng.PickleEventWrapper;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;

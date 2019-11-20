@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Nov 08 12:43:12 CST 2019</td>
+<td>Started on:</td><td>Wed Nov 13 19:03:57 CST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>74 seconds (74323 ms)</td>
+<tr><td>Total time:</td><td>54 seconds (54445 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,78 +75,6 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.testautomation.TestRunner.TestRunner.feature()'><b>feature</b><br>Test class: com.testautomation.TestRunner.TestRunner<br>Parameters: "Add a simple note 1", "Galen Framework Outline"</td>
-<td><div><pre>java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
-	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
-	at com.testautomation.StepDefinitions.LoginGalenFramework.i_create_a_simple_note(LoginGalenFramework.java:50)
-	at ?.I create a simple note &quot;Primer Mensaje&quot;(file:features/GalenPageTesting.feature:9)
-Caused by: java.io.IOException: Failed to copy full contents from &apos;C:\Users\PEDRO_~1\AppData\Local\Temp\screenshot4364598214222320578.png&apos; to &apos;C:\Users\Pedro_Santillan\git\Galen\Reports\Screenshots\11082019124350596.png&apos; Expected length: 75487 Actual: 75592
-	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
-	at com.testautomation.StepDefinitions.LoginGalenFramework.i_create_a_simple_note(LoginGalenFramework.java:50)
-	at cucumber.runtime.Utils$1.call(Utils.java:26)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
-	at cucumber.runtime.Utils.invoke(Utils.java:20)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
-	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
-	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
-	at cucumber.runner.TestStep.run(TestStep.java:50)
-	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
-	at cucumber.runner.TestCase.run(TestCase.java:46)
-	at cucumber.runner.Runner.runPickle(Runner.java:50)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
-	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:24)
-	at com.testautomation.TestRunner.TestRunner.feature(TestRunner.java:30)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1684557887", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1684557887'><pre>java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
-	at org.testng.Assert.fail(Assert.java:85)
-	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
-	at com.testautomation.StepDefinitions.LoginGalenFramework.i_create_a_simple_note(LoginGalenFramework.java:50)
-	at ?.I create a simple note &quot;Primer Mensaje&quot;(file:features/GalenPageTesting.feature:9)
-Caused by: java.io.IOException: Failed to copy full contents from &apos;C:\Users\PEDRO_~1\AppData\Local\Temp\screenshot4364598214222320578.png&apos; to &apos;C:\Users\Pedro_Santillan\git\Galen\Reports\Screenshots\11082019124350596.png&apos; Expected length: 75487 Actual: 75592
-	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
-	at com.testautomation.StepDefinitions.LoginGalenFramework.i_create_a_simple_note(LoginGalenFramework.java:50)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at cucumber.runtime.Utils$1.call(Utils.java:26)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
-	at cucumber.runtime.Utils.invoke(Utils.java:20)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
-	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
-	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
-	at cucumber.runner.TestStep.run(TestStep.java:50)
-	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
-	at cucumber.runner.TestCase.run(TestCase.java:46)
-	at cucumber.runner.Runner.runPickle(Runner.java:50)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
-	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:24)
-	at com.testautomation.TestRunner.TestRunner.feature(TestRunner.java:30)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)
-	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-</pre></div></td>
-<td>38</td>
-<td>com.testautomation.TestRunner.TestRunner@7a36aefa</td></tr>
-<tr>
 <td title='com.testautomation.TestRunner.TestRunner.feature()'><b>feature</b><br>Test class: com.testautomation.TestRunner.TestRunner<br>Parameters: "Add another note 2", "Galen Framework Outline"</td>
 <td><div><pre>java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
@@ -156,10 +84,10 @@ Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable t
   (Session info: chrome=78.0.3904.97)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;EPMXGUAW0506&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+System info: host: &apos;EPMXGUAW0506&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65226}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 33379d1d6a043aee54b5c9b708333ca8
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56312}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 1168227ea300ec721c3553a99a41fea4
 *** Element info: {Using=xpath, value=//*[contains(text(),&apos;hola&apos;)]}
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
 	at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:111)
@@ -174,16 +102,15 @@ Session ID: 33379d1d6a043aee54b5c9b708333ca8
 	at cucumber.runner.TestCase.run(TestCase.java:46)
 	at cucumber.runner.Runner.runPickle(Runner.java:50)
 	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
-	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:24)
 	at com.testautomation.TestRunner.TestRunner.feature(TestRunner.java:30)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1775114688", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1775114688'><pre>java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace164608417", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace164608417'><pre>java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
 	at org.testng.Assert.fail(Assert.java:85)
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
 	at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:111)
@@ -192,17 +119,17 @@ Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable t
   (Session info: chrome=78.0.3904.97)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;EPMXGUAW0506&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+System info: host: &apos;EPMXGUAW0506&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65226}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 33379d1d6a043aee54b5c9b708333ca8
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56312}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 1168227ea300ec721c3553a99a41fea4
 *** Element info: {Using=xpath, value=//*[contains(text(),&apos;hola&apos;)]}
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
 	at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:111)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
 	at cucumber.runtime.Utils$1.call(Utils.java:26)
 	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
 	at cucumber.runtime.Utils.invoke(Utils.java:20)
@@ -214,26 +141,25 @@ Session ID: 33379d1d6a043aee54b5c9b708333ca8
 	at cucumber.runner.TestCase.run(TestCase.java:46)
 	at cucumber.runner.Runner.runPickle(Runner.java:50)
 	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
-	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:24)
 	at com.testautomation.TestRunner.TestRunner.feature(TestRunner.java:30)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
 	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
 	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
 	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)
 	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
 </pre></div></td>
-<td>68</td>
-<td>com.testautomation.TestRunner.TestRunner@7a36aefa</td></tr>
+<td>53</td>
+<td>com.testautomation.TestRunner.TestRunner@5579bb86</td></tr>
 <tr>
 <td title='com.testautomation.TestRunner.TestRunner.feature()'><b>feature</b><br>Test class: com.testautomation.TestRunner.TestRunner<br>Parameters: "Add another note 1", "Galen Framework Outline"</td>
 <td><div><pre>java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
@@ -244,10 +170,10 @@ Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable t
   (Session info: chrome=78.0.3904.97)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;EPMXGUAW0506&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+System info: host: &apos;EPMXGUAW0506&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b04ac6c99e65a0f839953bb3457333ea
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56311}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7556df5ab7d840d8031beabdcc2d77d4
 *** Element info: {Using=xpath, value=//*[contains(text(),&apos;hola&apos;)]}
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
 	at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:111)
@@ -262,16 +188,15 @@ Session ID: b04ac6c99e65a0f839953bb3457333ea
 	at cucumber.runner.TestCase.run(TestCase.java:46)
 	at cucumber.runner.Runner.runPickle(Runner.java:50)
 	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
-	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:24)
 	at com.testautomation.TestRunner.TestRunner.feature(TestRunner.java:30)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace473082765", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace473082765'><pre>java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2061242143", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2061242143'><pre>java.lang.AssertionError: PRUEBA FALLO ASSERT TESTNG
 	at org.testng.Assert.fail(Assert.java:85)
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
 	at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:111)
@@ -280,17 +205,17 @@ Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable t
   (Session info: chrome=78.0.3904.97)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;EPMXGUAW0506&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+System info: host: &apos;EPMXGUAW0506&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_231&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:65223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: b04ac6c99e65a0f839953bb3457333ea
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\PEDRO_~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56311}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7556df5ab7d840d8031beabdcc2d77d4
 *** Element info: {Using=xpath, value=//*[contains(text(),&apos;hola&apos;)]}
 	at com.testautomation.Listeners.ExtentReportListener.testStepHandle(ExtentReportListener.java:55)
 	at com.testautomation.StepDefinitions.LoginGalenFramework.i_validate_the_another_note(LoginGalenFramework.java:111)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
 	at cucumber.runtime.Utils$1.call(Utils.java:26)
 	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
 	at cucumber.runtime.Utils.invoke(Utils.java:20)
@@ -302,26 +227,25 @@ Session ID: b04ac6c99e65a0f839953bb3457333ea
 	at cucumber.runner.TestCase.run(TestCase.java:46)
 	at cucumber.runner.Runner.runPickle(Runner.java:50)
 	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
-	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:24)
 	at com.testautomation.TestRunner.TestRunner.feature(TestRunner.java:30)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
 	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
 	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
 	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)
 	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
 </pre></div></td>
-<td>73</td>
-<td>com.testautomation.TestRunner.TestRunner@7a36aefa</td></tr>
+<td>53</td>
+<td>com.testautomation.TestRunner.TestRunner@5579bb86</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -331,15 +255,20 @@ Session ID: b04ac6c99e65a0f839953bb3457333ea
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='com.testautomation.TestRunner.TestRunner.feature()'><b>feature</b><br>Test class: com.testautomation.TestRunner.TestRunner<br>Parameters: "Add a simple note 1", "Galen Framework Outline"</td>
+<td></td>
+<td>23</td>
+<td>com.testautomation.TestRunner.TestRunner@5579bb86</td></tr>
+<tr>
 <td title='com.testautomation.TestRunner.TestRunner.feature()'><b>feature</b><br>Test class: com.testautomation.TestRunner.TestRunner<br>Parameters: "Add a simple note 2", "Galen Framework Outline"</td>
 <td></td>
-<td>37</td>
-<td>com.testautomation.TestRunner.TestRunner@7a36aefa</td></tr>
+<td>23</td>
+<td>com.testautomation.TestRunner.TestRunner@5579bb86</td></tr>
 <tr>
 <td title='com.testautomation.TestRunner.TestRunner.feature()'><b>feature</b><br>Test class: com.testautomation.TestRunner.TestRunner<br>Parameters: "Add a simple note 3", "Galen Framework Outline"</td>
 <td></td>
-<td>38</td>
-<td>com.testautomation.TestRunner.TestRunner@7a36aefa</td></tr>
+<td>24</td>
+<td>com.testautomation.TestRunner.TestRunner@5579bb86</td></tr>
 </table><p>
 </body>
 </html>
